@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Data View</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    label, select {
+      display: block;
+      margin-bottom: 10px;
+    }
+    #userData {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>User Data View</h2>
+
+  <label for="country">Select Country:</label>
+  <select id="country">
+    <option value="">-- Choose Country --</option>
+    <option value="USA">USA</option>
+    <option value="India">India</option>
+    <option value="Germany">England</option>
+  </select>
+
+  <label for="college">Select College:</label>
+  <select id="college">
+    <option value="">-- Choose College --</option>
+    <option value="IIT Bombay">IIT Bombay</option>
+    <option value="IIT Delhi">IIT Delhi</option>
+    <option value="RRSDCE,Begusarai">RRSDCE,Begusarai</option>
+    <option value="MIT">MIT</option>
+    <option value="Stanford University">Stanford University</option>
+    <option value="University of Cambridge">University of Cambridge</option>
+    <option value="University of Oxford">University of Oxford</option>
+
+
+  </select>
+
+  <button onclick="showUserData()">View Data</button>
+
+  <div id="userData"></div>
+
+  <script>
+    function showUserData() {
+      const country = document.getElementById("country").value;
+      const college = document.getElementById("college").value;
+
+      if (country && college) {
+        document.getElementById("userData").innerHTML =
+          <strong>Selected Country:</strong> ${country} <br>
+           <strong>Selected College:</strong> ${college};
+      }
+       else {
+        document.getElementById("userData").innerHTML =
+          "Please select both Country and College.";
+      }
+    }
+  </script>
+
+</body>
+</html>
